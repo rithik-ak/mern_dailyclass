@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: #333;
+            background-color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #222;
+        }
+        .logo span {
+             color: #051193;
+        }
+
+        .search-container {
+            position: relative;
+            width: 40%;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .search-container i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .user-options {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .user-options i { margin-right: 8px; font-size: 16px; }
+
+        .navbar {
+            background-color: #051193; 
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-item { cursor: pointer; }
+        .nav-item i { margin-right: 5px; }
+
+        .hero-container {
+            padding: 30px 5%;
+        }
+
+        .hero-card {
+            background-color: #f8f9fa; 
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            overflow: hidden;
+            min-height: 450px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero-text p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-shop {
+            background-color: #051193;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-shop:hover { background-color: #05119374; }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 5%;
+            margin-bottom: 50px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            width: 23%;
+        }
+
+        .feature-item i {
+            font-size: 24px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .feature-text h4 { 
+            font-size: 14px; margin-bottom: 5px; 
+        }
+
+        .feature-text p { 
+            font-size: 12px; color: #777; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">e-shop<span>.</span></div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search Products...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="user-options">
+            <div><i class="shoppingcart"></i> Cart $150.00</div>
+            <div><i class="user"></i> User Account</div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-item"><i class="fas fa-bars"></i> All Categories</div>
+            <div class="nav-item">Products <i class="fas fa-chevron-down"></i></div>
+            <div class="nav-item">Blog</div>
+            <div class="nav-item">Contact</div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-item">LIMITED SALE <i class="fas fa-heart"></i></div>
+            <div class="nav-item">Best Seller</div>
+            <div class="nav-item">New Arrival</div>
+        </div>
+    </nav>
+
+    <div class="hero-container">
+        <div class="hero-card">
+            <div class="hero-text">
+                <h1>Your One-Stop Electronic Market</h1>
+                <p>Welcome to e-shop, a place where you can buy everything about electronics. Sale every day!</p>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Electronics Flat Lay">
+            </div>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="headset"></i>
+            <div class="feature-text">
+                <h4>Responsive</h4>
+                <p>Customer service available 24/7</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="shield-alt"></i>
+            <div class="feature-text">
+                <h4>Secure</h4>
+                <p>Certified marketplace since 2017</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="shipping-fast"></i>
+            <div class="feature-text">
+                <h4>Shipping</h4>
+                <p>Free, fast, and reliable worldwide</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="undo"></i>
+            <div class="feature-text">
+                <h4>Transparent</h4>
+                <p>Hassle-free return policy</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

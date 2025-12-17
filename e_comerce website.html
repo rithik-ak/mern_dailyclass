@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E‑Commerce Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+    button {
+      background: #111;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #333;
+    }
+    #cart {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 250px;
+    }
+    #cart h2 {
+      margin-top: 0;
+    }
+    #cart ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>Rithik Store</header>
+
+  <div class="container" id="product-list"></div>
+
+  <div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+  </div>
+
+  <script>
+    const products = [
+      { id: 1, name: "Wireless Headphones", price: 49, img: "https://via.placeholder.com/300" },
+      { id: 2, name: "Smart Watch", price: 79, img: "https://via.placeholder.com/300" },
+      { id: 3, name: "Bluetooth Speaker", price: 35, img: "https://via.placeholder.com/300" },
+      { id: 4, name: "Gaming Mouse", price: 29, img: "https://via.placeholder.com/300" }
+    ];
+
+    const productList = document.getElementById('product-list');
+    const cartItems = document.getElementById('cart-items');
+    const totalElement = document.getElementById('total');
+
+    let cart = [];
+
+    function renderProducts() {
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${p.img}" />
+          <h3>${p.name}</h3>
+          <p>$${p.price}</p>
+          <button onclick="addToCart(${p.id})">Add to Cart</button>
+        `;
+        productList.appendChild(card);
+      });
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      cart.push(product);
+      updateCart();
+    }
+
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+      totalElement.textContent = total;
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
